@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corazón animado</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: sans-serif;
+    }
+    .wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .controls label {
+      font-size: 14px;
+      color: #aaa;
+    }
+    .controls input[type=text] {
+      width: 120px;
+      font-size: 22px;
+      text-align: center;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 6px 10px;
+      border: 1px solid #555;
+      border-radius: 8px;
+      background: #2a2a2a;
+      color: #fff;
+      outline: none;
+    }
+    .controls input[type=text]:focus {
+      border-color: #E24B4A;
+    }
+    .heart {
+      animation: latido 1s ease-in-out infinite;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+    @keyframes latido {
+      0%   { transform: scale(1); }
+      14%  { transform: scale(1.17); }
+      28%  { transform: scale(1); }
+      42%  { transform: scale(1.1); }
+      70%  { transform: scale(1); }
+      100% { transform: scale(1); }
+    }
+    .orb {
+      animation: girar 7s linear infinite;
+      transform-origin: 200px 185px;
+    }
+    @keyframes girar {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+    .inicial {
+      animation: pulso-txt 1s ease-in-out infinite;
+    }
+    @keyframes pulso-txt {
+      0%,100% { font-size: 52px; }
+      14%     { font-size: 62px; }
+      28%     { font-size: 52px; }
+      42%     { font-size: 58px; }
+      70%     { font-size: 52px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="controls">
+      <label>Tu inicial (máx. 3):</label>
+      <input type="text" id="inp" maxlength="3" value="E" oninput="actualizar(this.value)" />
+    </div>
+
+    <svg id="svg" width="400" height="370" viewBox="0 0 400 370">
+      <g class="orb">
+        <circle cx="200" cy="80"  r="4" fill="#E24B4A" opacity="0.45"/>
+        <circle cx="305" cy="115" r="3" fill="#F09595" opacity="0.4"/>
+        <circle cx="330" cy="220" r="4" fill="#E24B4A" opacity="0.45"/>
+        <circle cx="280" cy="315" r="3" fill="#F09595" opacity="0.4"/>
+        <circle cx="120" cy="315" r="4" fill="#E24B4A" opacity="0.45"/>
+        <circle cx="70"  cy="220" r="3" fill="#F09595" opacity="0.4"/>
+        <circle cx="95"  cy="115" r="4" fill="#E24B4A" opacity="0.45"/>
+        <circle cx="225" cy="72"  r="2" fill="#F09595" opacity="0.3"/>
+      </g>
+
+      <g class="heart">
+        <path d="
+          M 200 295
+          C 120 248, 45 205, 45 140
+          C 45 100, 74 78, 108 78
+          C 140 78, 166 94, 184 115
+          C 190 122, 196 130, 200 142
+          C 204 130, 210 122, 216 115
+          C 234 94, 260 78, 292 78
+          C 326 78, 355 100, 355 140
+          C 355 205, 280 248, 200 295 Z
+        " fill="#E24B4A"/>
+        <path d="
+          M 200 283
+          C 126 238, 57 198, 57 140
+          C 57 106, 82 90, 112 90
+          C 141 90, 165 105, 182 124
+          C 190 133, 196 142, 200 153
+          C 204 142, 210 133, 218 124
+          C 235 105, 259 90, 288 90
+          C 318 90, 343 106, 343 140
+          C 343 198, 274 238, 200 283 Z
+        " fill="#F09595" opacity="0.3"/>
+        <ellipse cx="130" cy="138" rx="26" ry="16" fill="white" opacity="0.15" transform="rotate(-30 130 138)"/>
+      </g>
+
+      <text id="txt-inicial" class="inicial"
+        x="200" y="205"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-family="Georgia, serif"
+        font-size="52"
+        font-weight="700"
+        fill="white"
+        opacity="0.95"
+        letter-spacing="4">E</text>
+    </svg>
+  </div>
+
+  <script>
+    function actualizar(val) {
+      var clean = val.replace(/[^a-zA-ZáéíóúÁÉÍÓÚüÜñÑ]/g, '').slice(0, 3).toUpperCase();
+      var txt = document.getElementById('txt-inicial');
+      txt.textContent = clean;
+      var fs = clean.length === 1 ? 62 : clean.length === 2 ? 46 : 34;
+      txt.style.fontSize = fs + 'px';
+      document.getElementById('inp').value = clean;
+    }
+  </script>
+</body>
+</html>

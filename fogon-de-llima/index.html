@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>El Fogon De Lima</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!--Navbar-->
+    <nav>
+        <div class="logo">El Fogon De Lima</div>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#reservas">Reservas</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    <!--Hero-->
+    <section class="hero" id="inicio">
+        <div class="hero-texto">
+            <h1>Sabor tradicional <br>en el corazón de Lima</h1>
+            <p>Cocina peruana auténtica desde 1998</p>
+            <a href="#menu" class="boton">Ver Menú</a>
+        </div>
+    </section>
+    <!-- MENÚ -->
+    <section class="menu" id="menu">
+        <h2>Nuestro Menú</h2>
+        <p class="subtitulo">Platos preparados con ingredientes frescos y recetas tradicionales</p>
+
+        <div class="menu-grid">
+
+            <div class="plato">
+                <img src="https://images.pexels.com/photos/7613568/pexels-photo-7613568.jpeg" alt="Ceviche">
+                <div class="plato-info">
+                    <h3>Ceviche Clásico</h3>
+                    <p>Pescado fresco, limón, ají limo y choclo</p>
+                    <span>S/ 35</span>
+                </div>
+            </div>
+
+            <div class="plato">
+                <img src="https://images.pexels.com/photos/5409010/pexels-photo-5409010.jpeg" alt="Lomo Saltado">
+                <div class="plato-info">
+                    <h3>Lomo Saltado</h3>
+                    <p>Lomo fino, tomate, cebolla, papas fritas y arroz</p>
+                    <span>S/ 42</span>
+                </div>
+            </div>
+
+            <div class="plato">
+                <img src="https://images.pexels.com/photos/4958792/pexels-photo-4958792.jpeg" alt="Aji de Gallina">
+                <div class="plato-info">
+                    <h3>Ají de Gallina</h3>
+                    <p>Gallina desmenuzada en salsa de ají amarillo y nueces</p>
+                    <span>S/ 38</span>
+                </div>
+            </div>
+
+            <div class="plato">
+                <img src="https://images.pexels.com/photos/6210747/pexels-photo-6210747.jpeg" alt="Causa Limeña">
+                <div class="plato-info">
+                    <h3>Causa Limeña</h3>
+                    <p>Papa amarilla, pollo, palta y mayonesa</p>
+                    <span>S/ 28</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- RESERVAS -->
+    <section class="reservas" id="reservas">
+        <div class="reservas-contenido">
+            <h2>Haz tu Reserva</h2>
+            <p>Reserva tu mesa con anticipación y disfruta de una experiencia única</p>
+
+            <div class="formulario">
+
+                <div class="campo">
+                    <label>Nombre completo</label>
+                    <input type="text" placeholder="Ej: Juan Pérez">
+                </div>
+
+                <div class="campo">
+                    <label>Correo electrónico</label>
+                    <input type="email" placeholder="Ej: juan@gmail.com">
+                </div>
+
+                <div class="campo">
+                    <label>Fecha</label>
+                    <input type="date">
+                </div>
+
+                <div class="campo">
+                    <label>Número de personas</label>
+                    <select>
+                        <option>1 persona</option>
+                        <option>2 personas</option>
+                        <option>3 personas</option>
+                        <option>4 personas</option>
+                        <option>5 o más personas</option>
+                    </select>
+                </div>
+
+                <button class="boton-reserva">Confirmar Reserva</button>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contacto">
+        <div class="footer-contenido">
+
+            <div class="footer-columna">
+                <h3>El Fogón de Lima</h3>
+                <p>Cocina peruana auténtica<br>desde 1998</p>
+            </div>
+
+            <div class="footer-columna">
+                <h3>Horarios</h3>
+                <p>Lunes a Viernes: 12pm - 10pm</p>
+                <p>Sábados y Domingos: 11am - 11pm</p>
+            </div>
+
+            <div class="footer-columna">
+                <h3>Contacto</h3>
+                <p>📍 Av. La Mar 450, Miraflores, Lima</p>
+                <p>📞 (01) 234-5678</p>
+                <p>✉️ contacto@elfogondelima.pe</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2024 El Fogón de Lima. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    </body>
+</html>

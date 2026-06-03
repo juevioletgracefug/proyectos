@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Club Brawl Stars</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #050508;
+    font-family: 'Barlow Condensed', sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  .page {
+    width: 420px;
+    background: linear-gradient(160deg, #0d0d18 0%, #0a0a0f 50%, #100a00 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #1e1a0a;
+  }
+  .top-bar { width: 100%; height: 5px; background: linear-gradient(90deg, #7a4e00, #ffd700, #ffd700, #7a4e00); }
+  .bg-stars { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+  .glow-ring { position: absolute; width: 300px; height: 300px; border-radius: 50%; border: 1px solid rgba(255,215,0,0.07); top: 20px; left: 50%; transform: translateX(-50%); pointer-events: none; z-index: 0; }
+  .glow-ring2 { position: absolute; width: 460px; height: 460px; border-radius: 50%; border: 1px solid rgba(255,215,0,0.03); top: -80px; left: 50%; transform: translateX(-50%); pointer-events: none; z-index: 0; }
+  .content { position: relative; z-index: 1; width: 100%; display: flex; flex-direction: column; align-items: center; }
+  .hex-badge { width: 130px; height: 130px; margin-top: 44px; display: flex; align-items: center; justify-content: center; animation: pulse 3s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { filter: drop-shadow(0 0 8px rgba(255,215,0,0.3)); } 50% { filter: drop-shadow(0 0 20px rgba(255,215,0,0.6)); } }
+  .club-name { font-family: 'Bebas Neue', sans-serif; font-size: 52px; letter-spacing: 5px; text-align: center; margin-top: 18px; background: linear-gradient(180deg, #ffd700 0%, #c8920a 60%, #7a4e00 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; padding: 0 24px; }
+  .tagline { font-size: 14px; letter-spacing: 3px; color: #8a6828; text-transform: uppercase; margin-top: 8px; text-align: center; }
+  .divider { width: 220px; height: 1px; background: linear-gradient(90deg, transparent, #ffd700, transparent); margin: 22px auto 0; }
+  .stats-row { display: flex; width: 100%; margin-top: 26px; border-top: 1px solid #1e1a0a; border-bottom: 1px solid #1e1a0a; }
+  .stat { flex: 1; padding: 18px 8px; text-align: center; border-right: 1px solid #1e1a0a; }
+  .stat:last-child { border-right: none; }
+  .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 34px; color: #ffd700; line-height: 1; display: block; }
+  .stat-label { font-size: 11px; letter-spacing: 1.5px; color: #6a5228; text-transform: uppercase; margin-top: 4px; display: block; }
+  .section-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 3px; color: #fff; margin: 30px 0 16px; text-align: center; }
+  .req-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; padding: 0 24px; }
+  .req-card { background: #0e0e08; border: 1px solid #2a220a; border-radius: 8px; padding: 16px 14px; text-align: left; position: relative; overflow: hidden; transition: border-color 0.2s, transform 0.2s; }
+  .req-card:hover { border-color: #ffd700; transform: translateY(-2px); }
+  .req-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #ffd700, #7a4e00); }
+  .req-icon { font-size: 26px; margin-bottom: 8px; display: block; }
+  .req-title { font-size: 14px; font-weight: 700; letter-spacing: 0.5px; color: #ffd700; line-height: 1.2; }
+  .req-sub { font-size: 12px; color: #6a5228; margin-top: 3px; line-height: 1.3; }
+  .cta-area { width: 100%; padding: 28px 24px 0; }
+  .cta-btn { width: 100%; height: 58px; background: linear-gradient(135deg, #b8780a 0%, #ffd700 50%, #b8780a 100%); border: none; border-radius: 6px; font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 5px; color: #0a0800; cursor: pointer; position: relative; overflow: hidden; }
+  .cta-btn::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,0.18) 0%, transparent 55%); }
+  .social-row { display: flex; gap: 12px; margin-top: 14px; width: 100%; padding: 0 24px; }
+  .social-btn { flex: 1; height: 44px; border: 1px solid #2a220a; background: #0d0d18; border-radius: 6px; display: flex; align-items: center; justify-content: center; gap: 7px; font-size: 13px; font-weight: 700; letter-spacing: 1px; color: #b09050; text-transform: uppercase; }
+  .separator { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #1e1a0a, transparent); margin-top: 28px; }
+  .bottom-tag { padding: 18px 0 30px; font-size: 12px; letter-spacing: 3px; color: #2e2510; text-transform: uppercase; text-align: center; }
+  .bottom-tag span { color: #4a3818; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="top-bar"></div>
+  <div class="glow-ring"></div>
+  <div class="glow-ring2"></div>
+
+  <svg class="bg-stars" viewBox="0 0 420 780" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="30" cy="90" r="1.2" fill="#ffd700" opacity="0.3"/>
+    <circle cx="390" cy="65" r="1.5" fill="#ffd700" opacity="0.2"/>
+    <circle cx="70" cy="220" r="1" fill="#ffd700" opacity="0.15"/>
+    <circle cx="370" cy="190" r="1" fill="#ffd700" opacity="0.22"/>
+    <circle cx="15" cy="380" r="1.2" fill="#ffd700" opacity="0.18"/>
+    <circle cx="405" cy="430" r="1" fill="#ffd700" opacity="0.12"/>
+    <circle cx="45" cy="540" r="1" fill="#ffd700" opacity="0.2"/>
+    <circle cx="385" cy="580" r="1.5" fill="#ffd700" opacity="0.1"/>
+    <circle cx="210" cy="25" r="1.2" fill="#ffd700" opacity="0.3"/>
+    <circle cx="130" cy="660" r="1" fill="#ffd700" opacity="0.14"/>
+    <circle cx="280" cy="700" r="1.2" fill="#ffd700" opacity="0.18"/>
+  </svg>
+
+  <div class="content">
+    <div class="hex-badge">
+  <img src="logo.png.jpeg" width="140" height="140" 
+  style="object-fit:contain; filter: drop-shadow(0 0 14px rgba(160,120,255,0.5));">
+</div>
+    <!-- ===== NOMBRE DEL CLUB ===== -->
+    <div class="club-name">Lunar Eclipse Shadow Society</div>
+
+    <!-- ===== SLOGAN ===== -->
+    <div class="tagline">Club de Brawl Stars · Únete a la élite</div>
+
+    <div class="divider"></div>
+
+    <div class="stats-row">
+      <!-- ===== ESTADÍSTICAS ===== -->
+      <div class="stat">
+        <span class="stat-num">30</span>         <!-- Número de miembros -->
+        <span class="stat-label">Miembros</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">20K+</span>       <!-- Trofeos del club -->
+        <span class="stat-label">Trofeos</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">TOP</span>        <!-- Rango o posición -->
+        <span class="stat-label">Futuro</span>
+      </div>
+    </div>
+
+    <!-- ===== TÍTULO SECCIÓN BENEFICIOS ===== -->
+    <div class="section-title">¿Qué ofrecemos?</div>
+
+    <div class="req-grid">
+      <!-- ===== TARJETA 1 ===== -->
+      <div class="req-card">
+        <span class="req-icon">🏆</span>                    <!-- Emoji -->
+        <div class="req-title">Actividades semanales</div>      <!-- Título -->
+        <div class="req-sub">Interactúa y diviértete</div>   <!-- Descripción -->
+      </div>
+      <!-- ===== TARJETA 2 ===== -->
+      <div class="req-card">
+        <span class="req-icon">🤝</span>
+        <div class="req-title">Comunidad activa</div>
+        <div class="req-sub">whatsapp y grupo activo</div>
+      </div>
+      <!-- ===== TARJETA 3 ===== -->
+      <div class="req-card">
+        <span class="req-icon">📈</span>
+        <div class="req-title">Mejora tu nivel</div>
+        <div class="req-sub">Tips y estrategias top</div>
+      </div>
+      <!-- ===== TARJETA 4 ===== -->
+      <div class="req-card">
+        <span class="req-icon">⚡</span>
+        <div class="req-title">Jugadores épicos</div>
+        <div class="req-sub">Solo los mejores</div>
+      </div>
+    </div>
+
+    <!-- ===== BOTÓN PRINCIPAL ===== -->
+    <div class="cta-area">
+      <button class="cta-btn">ÚNETE AL CLUB</button>
+    </div>
+
+    <!-- ===== REDES SOCIALES ===== -->
+    <div class="social-row">
+      <div class="social-btn">📸 @LESS</div>   <!-- Cambia por tu usuario de IG -->
+      <div class="social-btn">🎵 @less</div>   <!-- Cambia por tu usuario de TikTok -->
+    </div>
+
+    <div class="separator"></div>
+
+    <!-- ===== HASHTAG DEL PIE ===== -->
+    <div class="bottom-tag">#BrawlStars · #<span>LESS</span></div>
+  </div>
+</div>
+</body>
+</html>

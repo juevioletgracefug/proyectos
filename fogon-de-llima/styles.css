@@ -1,0 +1,303 @@
+/* RESET - Elimina márgenes y rellenos que el navegador pone por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* GENERAL - Fuente base de toda la página */
+body {
+    font-family: 'Lato', sans-serif;
+    color: #3d2b1f;
+    background-color: #fdf6ee;
+}
+
+/* NAVBAR - Barra de navegación */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3d2b1f;
+    padding: 20px 60px;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    color: #e8a87c;                 /* Naranja cálido */
+    font-size: 24px;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;               /* Quita los puntos de la lista */
+    display: flex;
+    gap: 30px;                      /* Espacio entre cada link */
+}
+
+nav ul a {
+    color: #fdf6ee;                 /* Texto claro */
+    text-decoration: none;          /* Quita el subrayado */
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+nav ul a:hover {
+    color: #e8a87c;                 /* Cambia a naranja al pasar el mouse */
+}
+
+/* HERO - Sección principal */
+.hero {
+    height: 100vh;                  /* Ocupa toda la pantalla */
+    background-image: url('https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg');
+    background-size: cover;         /* La imagen cubre todo */
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;             /* Se superpone sobre la imagen */
+    top: 0; left: 0;
+    width: 100%; height: 100vh;
+    background: rgba(0,0,0,0.5);    /* Oscurece la imagen para leer mejor el texto */
+}
+
+.hero-texto {
+    position: relative;             /* Para que quede encima del oscurecido */
+    z-index: 1;
+    color: white;
+}
+
+.hero-texto h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
+.hero-texto p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #e8a87c;
+}
+
+.boton {
+    background-color: #e8a87c;
+    color: #3d2b1f;
+    padding: 14px 32px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
+/* MENÚ - Sección */
+.menu {
+    padding: 80px 60px;
+    text-align: center;
+    background-color: #fdf6ee;
+}
+
+.menu h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: #3d2b1f;
+    margin-bottom: 12px;
+}
+
+.subtitulo {
+    color: #8c6b4f;
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+
+/* GRID - Las 4 tarjetas en fila */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
+    gap: 24px;
+}
+
+/* TARJETA de cada plato */
+.plato {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;              /* La imagen no se sale de la tarjeta */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s;    /* Animación suave al hover */
+}
+
+.plato:hover {
+    transform: translateY(-6px);   /* Se eleva al pasar el mouse */
+}
+
+.plato img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;             /* La imagen llena el espacio sin deformarse */
+}
+
+.plato-info {
+    padding: 16px;
+    text-align: left;
+}
+
+.plato-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #3d2b1f;
+    margin-bottom: 6px;
+}
+
+.plato-info p {
+    font-size: 13px;
+    color: #8c6b4f;
+    margin-bottom: 12px;
+}
+
+.plato-info span {
+    font-weight: 700;
+    color: #e8a87c;
+    font-size: 18px;
+}
+
+/* RESERVAS - Sección */
+.reservas {
+    background-color: #3d2b1f;     /* Fondo marrón oscuro */
+    padding: 80px 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.reservas-contenido {
+    text-align: center;
+    max-width: 600px;              /* No se estira demasiado */
+    width: 100%;
+}
+
+.reservas-contenido h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: #fdf6ee;
+    margin-bottom: 12px;
+}
+
+.reservas-contenido p {
+    color: #e8a87c;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+/* FORMULARIO */
+.formulario {
+    display: flex;
+    flex-direction: column;        /* Los campos van uno debajo del otro */
+    gap: 20px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.campo label {
+    color: #fdf6ee;
+    font-size: 14px;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.campo input,
+.campo select {
+    padding: 14px 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #5a3e30;     /* Marrón medio */
+    color: #fdf6ee;
+    font-size: 15px;
+    font-family: 'Lato', sans-serif;
+    outline: none;
+}
+
+.campo input::placeholder {
+    color: #a07860;                /* Texto de ejemplo más claro */
+}
+
+.campo input:focus,
+.campo select:focus {
+    background-color: #6b4c3b;     /* Se aclara un poco al hacer clic */
+}
+
+.campo select option {
+    background-color: #3d2b1f;
+}
+
+/* BOTÓN de reserva */
+.boton-reserva {
+    background-color: #e8a87c;
+    color: #3d2b1f;
+    padding: 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;               /* El cursor cambia a manito */
+    letter-spacing: 1px;
+    transition: background-color 0.3s;
+}
+
+.boton-reserva:hover {
+    background-color: #d4895a;
+}
+
+/* FOOTER */
+footer {
+    background-color: #2a1d14;     /* Marrón más oscuro que el resto */
+    padding: 60px 60px 0px 60px;
+    color: #fdf6ee;
+}
+
+.footer-contenido {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #5a3e30; /* Línea separadora */
+}
+
+.footer-columna h3 {
+    font-family: 'Playfair Display', serif;
+    color: #e8a87c;
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.footer-columna p {
+    color: #a07860;
+    font-size: 14px;
+    line-height: 1.8;              /* Espacio entre líneas */
+}
+
+/* LÍNEA FINAL */
+.footer-bottom {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #5a3e30;
+    font-size: 13px;
+}
+
+/* SCROLL SUAVE */
+html {
+    scroll-behavior: smooth;
+}
