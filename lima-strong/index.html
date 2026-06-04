@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lima Strong</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <div class="logo">LIMA<span>STRONG</span></div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#stats">Nosotros</a></li>
+            <li><a href="#planes">Planes</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <!-- BOTÓN HAMBURGUESA para celular -->
+        <button class="hamburguesa" id="hamburguesa">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+        <div class="hero-texto">
+            <h1>ENTRENA.<br>SUPÉRATE.<br>CONQUISTA.</h1>
+            <p>El gimnasio más intenso de Lima. Resultados reales, sin excusas.</p>
+            <a href="#planes" class="boton">Ver Planes</a>
+        </div>
+    </section>
+
+    <!-- ESTADÍSTICAS -->
+    <section class="stats" id="stats">
+        <div class="stat">
+            <h3 class="contador" data-target="500">0</h3>
+            <p>Miembros activos</p>
+        </div>
+        <div class="stat">
+            <h3 class="contador" data-target="15">0</h3>
+            <p>Entrenadores expertos</p>
+        </div>
+        <div class="stat">
+            <h3 class="contador" data-target="8">0</h3>
+            <p>Años de experiencia</p>
+        </div>
+        <div class="stat">
+            <h3 class="contador" data-target="30">0</h3>
+            <p>Clases por semana</p>
+        </div>
+    </section>
+
+    <!-- PLANES -->
+    <section class="planes" id="planes">
+        <h2>Nuestros Planes</h2>
+        <p class="subtitulo">Elige el plan que se adapta a ti</p>
+
+        <div class="planes-grid">
+
+            <div class="plan">
+                <h3>Básico</h3>
+                <div class="plan-precio">
+                    <span class="monto">S/ 89</span>
+                    <span class="periodo">/mes</span>
+                </div>
+                <ul>
+                    <li>✅ Acceso a sala de pesas</li>
+                    <li>✅ Vestuarios y duchas</li>
+                    <li>✅ 2 clases grupales/semana</li>
+                    <li>❌ Entrenador personal</li>
+                    <li>❌ Acceso 24 horas</li>
+                </ul>
+                <button class="boton-plan">Elegir Plan</button>
+            </div>
+
+            <div class="plan destacado">
+                <span class="popular">Más Popular</span>
+                <h3>Pro</h3>
+                <div class="plan-precio">
+                    <span class="monto">S/ 149</span>
+                    <span class="periodo">/mes</span>
+                </div>
+                <ul>
+                    <li>✅ Acceso a sala de pesas</li>
+                    <li>✅ Vestuarios y duchas</li>
+                    <li>✅ Clases grupales ilimitadas</li>
+                    <li>✅ 2 sesiones entrenador/mes</li>
+                    <li>❌ Acceso 24 horas</li>
+                </ul>
+                <button class="boton-plan">Elegir Plan</button>
+            </div>
+
+            <div class="plan">
+                <h3>Elite</h3>
+                <div class="plan-precio">
+                    <span class="monto">S/ 229</span>
+                    <span class="periodo">/mes</span>
+                </div>
+                <ul>
+                    <li>✅ Acceso a sala de pesas</li>
+                    <li>✅ Vestuarios y duchas</li>
+                    <li>✅ Clases grupales ilimitadas</li>
+                    <li>✅ Entrenador personal</li>
+                    <li>✅ Acceso 24 horas</li>
+                </ul>
+                <button class="boton-plan">Elegir Plan</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contacto">
+        <div class="footer-contenido">
+            <div class="footer-columna">
+                <h3>LIMA<span>STRONG</span></h3>
+                <p>El gimnasio más intenso de Lima desde 2016</p>
+            </div>
+            <div class="footer-columna">
+                <h3>Horarios</h3>
+                <p>Lunes a Viernes: 5am - 11pm</p>
+                <p>Sábados: 6am - 10pm</p>
+                <p>Domingos: 7am - 8pm</p>
+            </div>
+            <div class="footer-columna">
+                <h3>Contacto</h3>
+                <p>📍 Av. Javier Prado 1200, San Isidro</p>
+                <p>📞 (01) 345-6789</p>
+                <p>✉️ info@limastrong.pe</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Lima Strong. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT al final del body -->
+    <script src="script.js"></script>
+
+</body>
+</html>
