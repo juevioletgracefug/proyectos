@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peru Viajes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <div class="logo">Peru<span>Viajes</span></div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#destinos">Destinos</a></li>
+            <li><a href="#paquetes">Paquetes</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <button class="hamburguesa" id="hamburguesa">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+        <div class="hero-texto">
+            <span class="badge">✈️ Descubre el Perú</span>
+            <h1>Viajes que<br>cambian tu vida</h1>
+            <p>Explora Machu Picchu, el Lago Titicaca, el Colca y más destinos increíbles</p>
+            <a href="#destinos" class="boton">Explorar Destinos</a>
+        </div>
+    </section>
+
+    <!-- DESTINOS -->
+    <section class="destinos" id="destinos">
+        <h2>Destinos Populares</h2>
+        <p class="subtitulo">Los lugares más increíbles del Perú</p>
+
+        <div class="destinos-grid">
+
+            <div class="destino">
+                <img src="https://images.pexels.com/photos/2929906/pexels-photo-2929906.jpeg" alt="Machu Picchu">
+                <div class="destino-info">
+                    <h3>Machu Picchu</h3>
+                    <p>📍 Cusco</p>
+                    <span>Desde S/ 450</span>
+                </div>
+            </div>
+
+            <div class="destino">
+                <img src="lago-titicaca.jpg" alt="Lago Titicaca">
+                <div class="destino-info">
+                    <h3>Lago Titicaca</h3>
+                    <p>📍 Puno</p>
+                    <span>Desde S/ 320</span>
+                </div>
+            </div>
+
+            <div class="destino">
+                <img src="cañon-de-colca.jpg" alt="Colca">
+                <div class="destino-info">
+                    <h3>Cañón del Colca</h3>
+                    <p>📍 Arequipa</p>
+                    <span>Desde S/ 280</span>
+                </div>
+            </div>
+
+            <div class="destino">
+                <img src="amazonas.jpg" alt="Amazonas">
+                <div class="destino-info">
+                    <h3>Amazonas</h3>
+                    <p>📍 Loreto</p>
+                    <span>Desde S/ 680</span>
+                </div>
+            </div>
+
+            <div class="destino">
+                <img src="paracas.jpg" alt="Paracas">
+                <div class="destino-info">
+                    <h3>Paracas</h3>
+                    <p>📍 Ica</p>
+                    <span>Desde S/ 220</span>
+                </div>
+            </div>
+
+            <div class="destino">
+                <img src="cusco.jpg" alt="Cusco">
+                <div class="destino-info">
+                    <h3>Ciudad del Cusco</h3>
+                    <p>📍 Cusco</p>
+                    <span>Desde S/ 380</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PAQUETES -->
+    <section class="paquetes" id="paquetes">
+        <h2>Paquetes de Viaje</h2>
+        <p class="subtitulo">Todo incluido para que solo te preocupes de disfrutar</p>
+
+        <div class="paquetes-grid">
+
+            <div class="paquete">
+                <div class="paquete-imagen">
+                    <img src="cusco.jpg" alt="Cusco">
+                    <span class="dias">4 días / 3 noches</span>
+                </div>
+                <div class="paquete-info">
+                    <h3>Cusco & Machu Picchu</h3>
+                    <p>Visita la ciudadela inca más famosa del mundo con guía especializado</p>
+                    <div class="incluye">
+                        <span>🏨 Hotel</span>
+                        <span>🍽️ Desayuno</span>
+                        <span>🚌 Traslados</span>
+                    </div>
+                    <div class="precio-boton">
+                        <span class="precio">S/ 1,200</span>
+                        <button class="boton-reservar" onclick="mostrarModal(this)">Reservar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paquete">
+                <div class="paquete-imagen">
+                    <img src="lago-titicaca.jpg" alt="Titicaca">
+                    <span class="dias">3 días / 2 noches</span>
+                </div>
+                <div class="paquete-info">
+                    <h3>Lago Titicaca</h3>
+                    <p>Navega por el lago navegable más alto del mundo y visita las islas flotantes</p>
+                    <div class="incluye">
+                        <span>🏨 Hotel</span>
+                        <span>🍽️ Desayuno</span>
+                        <span>⛵ Bote</span>
+                    </div>
+                    <div class="precio-boton">
+                        <span class="precio">S/ 890</span>
+                        <button class="boton-reservar" onclick="mostrarModal(this)">Reservar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paquete">
+                <div class="paquete-imagen">
+                    <img src="amazonas.jpg" alt="Amazonas">
+                    <span class="dias">5 días / 4 noches</span>
+                </div>
+                <div class="paquete-info">
+                    <h3>Amazonas Salvaje</h3>
+                    <p>Adéntrate en la selva peruana y descubre su increíble biodiversidad</p>
+                    <div class="incluye">
+                        <span>🏨 Lodge</span>
+                        <span>🍽️ Completo</span>
+                        <span>🚁 Vuelo</span>
+                    </div>
+                    <div class="precio-boton">
+                        <span class="precio">S/ 2,100</span>
+                        <button class="boton-reservar" onclick="mostrarModal(this)">Reservar</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MODAL de reserva (JavaScript lo muestra/oculta) -->
+    <div class="modal" id="modal">
+        <div class="modal-contenido">
+            <button class="cerrar-modal" id="cerrar-modal">✕</button>
+            <h3>Reservar Paquete</h3>
+            <p id="modal-paquete"></p>
+            <div class="campo">
+                <label>Nombre completo</label>
+                <input type="text" placeholder="Ej: Juan Pérez">
+            </div>
+            <div class="campo">
+                <label>Correo electrónico</label>
+                <input type="email" placeholder="Ej: juan@gmail.com">
+            </div>
+            <div class="campo">
+                <label>Fecha de viaje</label>
+                <input type="date">
+            </div>
+            <div class="campo">
+                <label>Número de personas</label>
+                <select>
+                    <option>1 persona</option>
+                    <option>2 personas</option>
+                    <option>3 personas</option>
+                    <option>4 o más personas</option>
+                </select>
+            </div>
+            <button class="boton-confirmar">Confirmar Reserva</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="contacto">
+        <div class="footer-contenido">
+            <div class="footer-columna">
+                <h3>Peru<span>Viajes</span></h3>
+                <p>Tu agencia de viajes de confianza para explorar el Perú desde 2015</p>
+            </div>
+            <div class="footer-columna">
+                <h3>Destinos</h3>
+                <p>Machu Picchu</p>
+                <p>Lago Titicaca</p>
+                <p>Cañón del Colca</p>
+                <p>Amazonas</p>
+            </div>
+            <div class="footer-columna">
+                <h3>Contacto</h3>
+                <p>📍 Av. Larco 345, Miraflores, Lima</p>
+                <p>📞 (01) 456-7890</p>
+                <p>✉️ hola@peruviajes.pe</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Peru Viajes. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
