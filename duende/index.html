@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Muebles en Melamina</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">muebles</div>
+
+            <ul class="menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#proceso">Proceso</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="hero-contenido">
+
+            <span class="subtitulo-hero">
+                Muebles personalizados en melamina
+            </span>
+
+            <h1>
+                Diseñamos espacios que combinan estilo, calidad y funcionalidad.
+            </h1>
+
+            <p>
+                Cocinas, closets, centros de entretenimiento y muebles de estudio
+                fabricados a medida para cada cliente.
+            </p>
+
+            <div class="botones">
+                <a href="#catalogo" class="btn btn-principal">
+                    Ver catálogo
+                </a>
+
+                <button class="btn btn-whatsapp" id="abrirFormularioHero">
+                    Cotizar por WhatsApp
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="sobre" id="sobre">
+        <div class="sobre-texto">
+
+            <span class="etiqueta">SOBRE NOSOTROS</span>
+
+            <h2>Diseñamos muebles que transforman tus espacios.</h2>
+
+            <p>
+                Nos especializamos en la fabricación de muebles en melamina con diseños
+                personalizados, acabados de calidad y atención a cada detalle.
+                Nuestro objetivo es crear espacios funcionales y modernos para cada cliente.
+            </p>
+
+        </div>
+    </section>
+
+    <section class="catalogo" id="catalogo">
+
+        <div class="titulo-seccion">
+            <span class="etiqueta">NUESTROS TRABAJOS</span>
+            <h2>Conoce nuestro catálogo</h2>
+            <p>Diseños a medida para cada espacio de tu hogar.</p>
+        </div>
+
+        <div class="catalogo-grid">
+
+            <article class="card-catalogo">
+                <img src="https://placehold.co/700x500?text=Cocinas" alt="Mueble de cocina">
+
+                <div class="card-info">
+                    <h3>Cocinas</h3>
+                    <p>Cocinas modernas, funcionales y diseñadas según tu espacio.</p>
+                    <button class="btn-ver" data-producto="Cocina">Ver proyectos</button>
+                </div>
+            </article>
+
+            <article class="card-catalogo">
+                <img src="https://placehold.co/700x500?text=Closets" alt="Closet personalizado">
+
+                <div class="card-info">
+                    <h3>Closets</h3>
+                    <p>Closets personalizados para aprovechar cada rincón.</p>
+                    <button class="btn-ver" data-producto="Closet">Ver proyectos</button>
+                </div>
+            </article>
+
+            <article class="card-catalogo">
+                <img src="https://placehold.co/700x500?text=Centro+de+entretenimiento" alt="Centro de entretenimiento">
+
+                <div class="card-info">
+                    <h3>Centros de entretenimiento</h3>
+                    <p>Muebles elegantes y funcionales para tu sala.</p>
+                    <button class="btn-ver" data-producto="Centro de entretenimiento">Ver proyectos</button>
+                </div>
+            </article>
+
+            <article class="card-catalogo">
+                <img src="https://placehold.co/700x500?text=Centro+de+estudio" alt="Centro de estudio">
+
+                <div class="card-info">
+                    <h3>Centros de estudio</h3>
+                    <p>Espacios cómodos y organizados para estudiar o trabajar.</p>
+                    <button class="btn-ver" data-producto="Centro de estudio">Ver proyectos</button>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section class="proceso" id="proceso">
+
+    <div class="titulo-seccion">
+        <span class="etiqueta">NUESTRO PROCESO</span>
+        <h2>Así hacemos realidad tu proyecto</h2>
+        <p>Te acompañamos desde la idea hasta la instalación final.</p>
+    </div>
+
+    <div class="pasos-proceso">
+
+        <div class="paso">
+            <span class="numero-paso">01</span>
+            <h3>Nos escribes</h3>
+            <p>Cuéntanos qué mueble necesitas y envíanos una referencia o medidas.</p>
+        </div>
+
+        <div class="paso">
+            <span class="numero-paso">02</span>
+            <h3>Cotizamos</h3>
+            <p>Evaluamos tu proyecto y te enviamos una cotización personalizada.</p>
+        </div>
+
+        <div class="paso">
+            <span class="numero-paso">03</span>
+            <h3>Fabricamos</h3>
+            <p>Preparamos cada detalle con materiales de calidad y acabados precisos.</p>
+        </div>
+
+        <div class="paso">
+            <span class="numero-paso">04</span>
+            <h3>Instalamos</h3>
+            <p>Realizamos la instalación para que disfrutes tu nuevo espacio.</p>
+        </div>
+
+    </div>
+
+</section>
+
+    <section class="contacto" id="contacto">
+    <div class="contacto-contenido">
+        <span class="etiqueta etiqueta-clara">CONTACTO</span>
+
+        <h2>¿Tienes un proyecto en mente?</h2>
+
+        <p>
+            Escríbenos por WhatsApp y solicita una cotización personalizada
+            para tu mueble en melamina.
+        </p>
+
+        <button class="btn-contacto" id="abrirFormulario">
+            Cotizar por WhatsApp
+        </button>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>© 2026 muebles. Todos los derechos reservados.</p>
+    <p>Muebles personalizados en melamina.</p>
+</footer>
+
+<div class="modal" id="modalContacto">
+    <div class="modal-contenido">
+
+        <button class="cerrar-modal" id="cerrarFormulario">×</button>
+
+        <h2>Solicita tu cotización</h2>
+
+        <form id="formularioWhatsapp">
+
+            <label for="producto">¿Qué producto te interesa?</label>
+            <select id="producto" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Cocina">Cocina</option>
+                <option value="Closet">Closet</option>
+                <option value="Centro de entretenimiento">Centro de entretenimiento</option>
+                <option value="Centro de estudio">Centro de estudio</option>
+                <option value="Otro mueble">Otro mueble</option>
+            </select>
+
+            <label for="origen">¿Cómo nos conociste?</label>
+            <select id="origen" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Facebook">Facebook</option>
+                <option value="Instagram">Instagram</option>
+                <option value="Google">Google</option>
+                <option value="Recomendación">Recomendación</option>
+                <option value="Otro medio">Otro medio</option>
+            </select>
+
+            <div class="campo-recomendacion" id="campoRecomendacion">
+                <label for="recomendadoPor">¿Quién te recomendó?</label>
+                <input type="text" id="recomendadoPor" placeholder="Nombre o código">
+            </div>
+
+            <button type="submit" class="btn-enviar">
+                Continuar a WhatsApp
+            </button>
+
+        </form>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

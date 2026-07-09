@@ -1,152 +1,269 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+    <title>Portafolio web | Eduardo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
-        body {
-            font-family: 'Lato', sans-serif;
-            background-color: #0f0f0f;
-            color: white;
-        }
+```
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: 'Lato', sans-serif;
+        background-color: #0f0f0f;
+        color: white;
+    }
+
+    header {
+        text-align: center;
+        padding: 80px 20px 60px;
+        max-width: 900px;
+        margin: auto;
+    }
+
+    header h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(36px, 6vw, 54px);
+        color: #e8a87c;
+        margin-bottom: 16px;
+    }
+
+    header p {
+        color: #c4c4c4;
+        font-size: 18px;
+        line-height: 1.6;
+        max-width: 650px;
+        margin: 0 auto 28px;
+    }
+
+    .boton-whatsapp {
+        display: inline-block;
+        background-color: #e8a87c;
+        color: #0f0f0f;
+        padding: 13px 28px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .boton-whatsapp:hover {
+        background-color: #d4895a;
+        transform: translateY(-3px);
+    }
+
+    .servicios {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 30px 45px;
+        text-align: center;
+    }
+
+    .servicios h2 {
+        font-family: 'Playfair Display', serif;
+        color: #e8a87c;
+        font-size: 30px;
+        margin-bottom: 14px;
+    }
+
+    .servicios p {
+        color: #aaa;
+        line-height: 1.7;
+        max-width: 700px;
+        margin: auto;
+    }
+
+    .proyectos {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        padding: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .tarjeta {
+        background-color: #1a1a1a;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: transform 0.3s;
+    }
+
+    .tarjeta:hover {
+        transform: translateY(-8px);
+    }
+
+    .tarjeta img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .tarjeta-info {
+        padding: 24px;
+    }
+
+    .tarjeta-info h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 22px;
+        color: #e8a87c;
+        margin-bottom: 8px;
+    }
+
+    .tarjeta-info p {
+        color: #aaa;
+        font-size: 14px;
+        margin-bottom: 12px;
+        line-height: 1.6;
+    }
+
+    .incluye {
+        color: #777 !important;
+        font-size: 13px !important;
+        min-height: 42px;
+    }
+
+    .tarjeta-info a {
+        display: inline-block;
+        background-color: #e8a87c;
+        color: #0f0f0f;
+        padding: 10px 24px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+    .tarjeta-info a:hover {
+        background-color: #d4895a;
+    }
+
+    .contacto {
+        text-align: center;
+        padding: 70px 20px;
+        margin-top: 30px;
+        background-color: #171717;
+    }
+
+    .contacto h2 {
+        font-family: 'Playfair Display', serif;
+        color: #e8a87c;
+        font-size: 32px;
+        margin-bottom: 14px;
+    }
+
+    .contacto p {
+        color: #aaa;
+        margin-bottom: 25px;
+        line-height: 1.6;
+    }
+
+    footer {
+        text-align: center;
+        padding: 28px;
+        color: #666;
+        font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
         header {
-            text-align: center;
-            padding: 80px 20px 40px;
-        }
-
-        header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 48px;
-            color: #e8a87c;
-            margin-bottom: 12px;
-        }
-
-        header p {
-            color: #888;
-            font-size: 18px;
+            padding: 60px 20px 45px;
         }
 
         .proyectos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 60px;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 20px;
         }
+    }
+</style>
+```
 
-        .tarjeta {
-            background-color: #1a1a1a;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-
-        .tarjeta:hover {
-            transform: translateY(-8px);
-        }
-
-        .tarjeta img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .tarjeta-info {
-            padding: 24px;
-        }
-
-        .tarjeta-info h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px;
-            color: #e8a87c;
-            margin-bottom: 8px;
-        }
-
-        .tarjeta-info p {
-            color: #888;
-            font-size: 14px;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        .tarjeta-info a {
-            background-color: #e8a87c;
-            color: #0f0f0f;
-            padding: 10px 24px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 14px;
-        }
-
-        .tarjeta-info a:hover {
-            background-color: #d4895a;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            color: #444;
-            font-size: 13px;
-        }
-    </style>
 </head>
+
 <body>
 
-    <header>
-        <h1>Mi Portafolio</h1>
-        <p>Proyectos de desarrollo web</p>
-    </header>
+```
+<header>
+    <h1>Portafolio de páginas web — Eduardo</h1>
+    <p>Creo páginas web modernas para negocios, con catálogo, información clara, ubicación y botones directos a WhatsApp para facilitar el contacto con clientes.</p>
 
-    <div class="proyectos">
+    <a class="boton-whatsapp" href="https://wa.me/TU_NUMERO?text=Hola%20Eduardo%2C%20vi%20tu%20portafolio%20y%20quiero%20una%20p%C3%A1gina%20web." target="_blank">
+        Solicita tu página por WhatsApp
+    </a>
+</header>
 
-        <div class="tarjeta">
-            <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg" alt="El Fogón de Lima">
-            <div class="tarjeta-info">
-                <h3>El Fogón de Lima</h3>
-                <p>Página web para restaurante peruano con menú, reservas y footer de contacto.</p>
-                <a href="fogon-de-llima/index.html">Ver proyecto</a>
-            </div>
+<section class="servicios">
+    <h2>¿Qué puedo crear para tu negocio?</h2>
+    <p>Páginas para restaurantes, tiendas, gimnasios, emprendimientos y servicios. Cada proyecto puede adaptarse con tus fotos, productos, precios, redes sociales y datos de contacto.</p>
+</section>
+
+<main class="proyectos">
+
+    <article class="tarjeta">
+        <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg" alt="El Fogón de Lima">
+        <div class="tarjeta-info">
+            <h3>El Fogón de Lima</h3>
+            <p>Página web para restaurante peruano con menú, reservas y contacto.</p>
+            <p class="incluye">Incluye: menú, reservas y ubicación.</p>
+            <a href="fogon-de-llima/index.html">Ver proyecto</a>
         </div>
+    </article>
 
-        <div class="tarjeta">
-            <img src="https://www.shutterstock.com/image-photo/various-dried-spices-andean-cereals-600nw-2332464631.jpg" alt="Mercado Andino">
-            <div class="tarjeta-info">
-                <h3>El Mercado Andino</h3>
-                <p>Página web para tienda de productos naturales y orgánicos.</p>
-                <a href="mercado-andino/index.html">Ver proyecto</a>
-            </div>
+    <article class="tarjeta">
+        <img src="https://www.shutterstock.com/image-photo/various-dried-spices-andean-cereals-600nw-2332464631.jpg" alt="Mercado Andino">
+        <div class="tarjeta-info">
+            <h3>El Mercado Andino</h3>
+            <p>Página web para tienda de productos naturales y orgánicos.</p>
+            <p class="incluye">Incluye: catálogo, productos y contacto.</p>
+            <a href="mercado-andino/index.html">Ver proyecto</a>
         </div>
+    </article>
 
-        <div class="tarjeta">
-    <img src="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg" alt="Lima Strong">
-    <div class="tarjeta-info">
-        <h3>Lima Strong</h3>
-        <p>Página web para gimnasio con contadores animados, menú responsive y planes de membresía.</p>
-        <a href="lima-strong/index.html">Ver proyecto</a>
-    </div>
-    </div>
+    <article class="tarjeta">
+        <img src="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg" alt="Lima Strong">
+        <div class="tarjeta-info">
+            <h3>Lima Strong</h3>
+            <p>Página web para gimnasio con planes y menú adaptable a celular.</p>
+            <p class="incluye">Incluye: planes, contadores y diseño responsive.</p>
+            <a href="lima-strong/index.html">Ver proyecto</a>
+        </div>
+    </article>
 
-    <div class="tarjeta">
-    <img src="https://images.pexels.com/photos/2929906/pexels-photo-2929906.jpeg" alt="Peru Viajes">
-    <div class="tarjeta-info">
-        <h3>Peru Viajes</h3>
-        <p>Agencia de viajes con destinos, paquetes y modal de reservas interactivo con JavaScript.</p>
-        <a href="peru-viajes/index.html">Ver proyecto</a>
-    </div>
-</div>
+    <article class="tarjeta">
+        <img src="https://images.pexels.com/photos/2929906/pexels-photo-2929906.jpeg" alt="Perú Viajes">
+        <div class="tarjeta-info">
+            <h3>Perú Viajes</h3>
+            <p>Agencia de viajes con destinos, paquetes y reservas interactivas.</p>
+            <p class="incluye">Incluye: destinos, paquetes y modal de reservas.</p>
+            <a href="peru-viajes/index.html">Ver proyecto</a>
+        </div>
+    </article>
 
-    </div>
+</main>
 
-    <footer>
-        <p>Hecho con HTML y CSS</p>
-    </footer>
+<section class="contacto">
+    <h2>¿Quieres una página así para tu negocio?</h2>
+    <p>Puedo prepararte una propuesta visual adaptada a tu marca, productos y servicios.</p>
+
+    <a class="boton-whatsapp" href="https://wa.me/+51969527971?text=Hola%20Eduardo%2C%20quiero%20una%20propuesta%20visual%20para%20mi%20negocio." target="_blank">
+        Escríbeme por WhatsApp
+    </a>
+</section>
+
+<footer>
+    <p>Portafolio de Eduardo · Hecho con HTML, CSS y JavaScript</p>
+</footer>
+```
 
 </body>
 </html>

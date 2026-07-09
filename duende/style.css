@@ -1,0 +1,587 @@
+/* ===========================
+   ESTILOS GENERALES
+=========================== */
+
+html{
+    scroll-behavior:smooth;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background:#f7f7f7;
+    color:#222;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:#fff;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#8B5E3C;
+}
+
+.menu{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#222;
+    font-weight:500;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#8B5E3C;
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px 20px;
+    color:#fff;
+
+    background:
+        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+        url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-contenido{
+    max-width:900px;
+}
+
+.subtitulo-hero{
+    display:inline-block;
+    margin-bottom:20px;
+    color:#ffffffcc;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-size:14px;
+}
+
+.hero h1{
+    font-size:55px;
+    line-height:1.2;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:700px;
+    margin:0 auto 35px;
+    font-size:20px;
+    line-height:1.8;
+}
+
+/* ===========================
+   BOTONES
+=========================== */
+
+.botones{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.btn{
+    text-decoration:none;
+    padding:15px 35px;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-principal{
+    background:#8B5E3C;
+    color:#fff;
+}
+
+.btn-whatsapp{
+    background:#25D366;
+    color:#fff;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+}
+
+/* ===========================
+   SOBRE NOSOTROS
+=========================== */
+
+.sobre{
+    padding:100px 8%;
+    background:#fff;
+    display:flex;
+    justify-content:center;
+}
+
+.sobre-texto{
+    max-width:850px;
+    text-align:center;
+}
+
+.etiqueta{
+    display:inline-block;
+    margin-bottom:15px;
+    color:#8B5E3C;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:2px;
+}
+
+.sobre h2{
+    font-size:40px;
+    margin-bottom:25px;
+}
+
+.sobre p{
+    color:#666;
+    font-size:18px;
+    line-height:1.8;
+}
+
+/* ===========================
+   CATÁLOGO
+=========================== */
+
+.catalogo{
+    padding:100px 8%;
+    background:#f7f7f7;
+}
+
+.titulo-seccion{
+    max-width:700px;
+    margin:0 auto 55px;
+    text-align:center;
+}
+
+.titulo-seccion h2{
+    margin:12px 0;
+    font-size:42px;
+}
+
+.titulo-seccion p{
+    color:#666;
+    font-size:17px;
+}
+
+.catalogo-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:28px;
+}
+
+.card-catalogo{
+    overflow:hidden;
+    background:#fff;
+    border-radius:18px;
+    box-shadow:0 10px 28px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card-catalogo:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 35px rgba(0,0,0,.13);
+}
+
+.card-catalogo img{
+    display:block;
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+
+.card-info{
+    padding:26px;
+}
+
+.card-info h3{
+    margin-bottom:10px;
+    font-size:25px;
+}
+
+.card-info p{
+    margin-bottom:22px;
+    color:#666;
+    line-height:1.6;
+}
+
+.btn-ver{
+    border:none;
+    border-radius:9px;
+    background:#8B5E3C;
+    color:#fff;
+    padding:13px 22px;
+    font-family:'Poppins', sans-serif;
+    font-weight:600;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.btn-ver:hover{
+    background:#6d482d;
+}
+
+/* ===========================
+   CELULAR
+=========================== */
+
+@media(max-width:700px){
+
+    .navbar{
+        padding:16px 6%;
+    }
+
+    .logo{
+        font-size:24px;
+    }
+
+    .menu{
+        gap:14px;
+        font-size:13px;
+    }
+
+    .hero{
+        min-height:85vh;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .botones{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .btn{
+        width:100%;
+        max-width:280px;
+        text-align:center;
+    }
+
+    .sobre,
+    .catalogo{
+        padding:70px 6%;
+    }
+
+    .sobre h2,
+    .titulo-seccion h2{
+        font-size:32px;
+    }
+
+    .sobre p{
+        font-size:16px;
+    }
+
+    .catalogo-grid{
+        grid-template-columns:1fr;
+    }
+
+    .card-catalogo img{
+        height:220px;
+    }
+}
+
+/* ===========================
+   PROCESO
+=========================== */
+
+.proceso{
+    padding:100px 8%;
+    background:#fff;
+}
+
+.pasos-proceso{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:22px;
+}
+
+.paso{
+    padding:30px 22px;
+    border:1px solid #e8e0da;
+    border-radius:16px;
+    background:#fff;
+    transition:.3s;
+}
+
+.paso:hover{
+    transform:translateY(-7px);
+    box-shadow:0 12px 28px rgba(0,0,0,.08);
+}
+
+.numero-paso{
+    display:inline-block;
+    margin-bottom:20px;
+    color:#8B5E3C;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.paso h3{
+    margin-bottom:12px;
+    font-size:22px;
+}
+
+.paso p{
+    color:#666;
+    line-height:1.65;
+    font-size:15px;
+}
+
+@media(max-width:900px){
+    .pasos-proceso{
+        grid-template-columns:repeat(2, 1fr);
+    }
+}
+
+@media(max-width:700px){
+    .pasos-proceso{
+        grid-template-columns:1fr;
+    }
+}
+
+/* ===========================
+   CONTACTO
+=========================== */
+
+.contacto{
+    padding:100px 8%;
+    background:#8B5E3C;
+    text-align:center;
+    color:white;
+}
+
+.contacto-contenido{
+    max-width:750px;
+    margin:auto;
+}
+
+.etiqueta-clara{
+    color:#f3d5bb;
+}
+
+.contacto h2{
+    font-size:42px;
+    margin:15px 0 20px;
+}
+
+.contacto p{
+    font-size:18px;
+    line-height:1.8;
+    color:#ffffffd9;
+    margin-bottom:30px;
+}
+
+.btn-contacto{
+    border:none;
+    background:#25D366;
+    color:white;
+    padding:16px 32px;
+    border-radius:50px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn-contacto:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 20px rgba(0,0,0,.2);
+}
+
+/* ===========================
+   MODAL
+=========================== */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.65);
+    z-index:999;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal.activo{
+    display:flex;
+}
+
+.modal-contenido{
+    position:relative;
+    width:100%;
+    max-width:500px;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+}
+
+.modal-contenido h2{
+    font-size:28px;
+    margin-bottom:25px;
+    color:#222;
+}
+
+.cerrar-modal{
+    position:absolute;
+    top:15px;
+    right:18px;
+    border:none;
+    background:none;
+    font-size:30px;
+    cursor:pointer;
+    color:#666;
+}
+
+#formularioWhatsapp{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    text-align:left;
+}
+
+#formularioWhatsapp label{
+    font-weight:600;
+    margin-top:8px;
+}
+
+#formularioWhatsapp select,
+#formularioWhatsapp input{
+    width:100%;
+    padding:13px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-family:'Poppins', sans-serif;
+    font-size:14px;
+}
+
+#formularioWhatsapp select:focus,
+#formularioWhatsapp input:focus{
+    outline:none;
+    border-color:#8B5E3C;
+}
+
+.campo-recomendacion{
+    display:none;
+}
+
+.btn-enviar{
+    margin-top:15px;
+    border:none;
+    background:#25D366;
+    color:white;
+    padding:15px;
+    border-radius:10px;
+    font-family:'Poppins', sans-serif;
+    font-weight:600;
+    font-size:15px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn-enviar:hover{
+    background:#1ebc59;
+}
+
+/* Celular */
+
+@media(max-width:700px){
+
+    .navbar{
+        padding:16px 6%;
+    }
+
+    .menu{
+        gap:14px;
+        font-size:13px;
+    }
+
+    .logo{
+        font-size:22px;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .botones{
+        flex-direction:column;
+        width:100%;
+        max-width:280px;
+    }
+
+    .btn{
+        text-align:center;
+    }
+
+    .contacto h2{
+        font-size:30px;
+    }
+
+    .modal-contenido{
+        padding:30px 22px;
+    }
+}
+
+/* FOOTER */
+
+.footer{
+    background:#222;
+    color:#ffffffb3;
+    text-align:center;
+    padding:28px 20px;
+    font-size:14px;
+}
+
+.footer p:first-child{
+    margin-bottom:6px;
+}
